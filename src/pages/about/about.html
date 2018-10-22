@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      About
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item-sliding *ngFor="let tarea of this.servicioTarea.tareas">
+        <!-- <button ion-item *ngFor="let tarea of tareas">
+          {{ tarea.descripcion }}
+        </button> -->
+          <ion-item color="light" [style.font-weight]='600'>
+              <ion-label [ngStyle]="{'color': tarea.importante? 'red': 'black'}">{{ tarea.descripcion }}</ion-label>
+              <ion-checkbox [checked]="tarea.realizado"></ion-checkbox>
+          </ion-item>
+          <ion-item-options side="right">
+              <button ion-button (click)="borraTarea(tarea)">Borrar</button>
+              <button ion-button (click)="actualizaTarea(tarea)">Actualizar</button>
+          </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+      <ion-fab right bottom (click)="nuevaTarea()">
+        <button ion-fab color='danger'>
+            <ion-icon name="add"></ion-icon>
+        </button>
+      </ion-fab>
+</ion-content>

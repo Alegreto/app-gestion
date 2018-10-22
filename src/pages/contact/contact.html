@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Contact
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>Accede a la cámara</ion-list-header>
+
+    <ion-item>
+      <ion-icon item-start></ion-icon>
+      <button ion-button (click)="realizaFoto()">Realiza foto</button>    
+    </ion-item>
+
+    <ion-item>
+        <ion-icon item-start></ion-icon>
+        <button ion-button (click)="dameLocalizacion()">Dame localización</button>      
+    </ion-item>
+
+    <ion-item>
+      <ion-icon item-start></ion-icon>
+      <button ion-button (click)="mostrarFoto()">Mostrar foto</button>      
+  </ion-item>
+
+  </ion-list>
+
+  <button ion-button (click)='calendario()'>Accede</button>
+  <!-- <img [src]="base64Image"> -->
+ <!-- <img *nfIf="muestraFoto" [src]="base64Image"> -->
+</ion-content>
